@@ -12,7 +12,7 @@ const doc = {
       description: "Local Server",
     },
     {
-      url: "https://back-end-railvision.vercel.app/api",
+      url: "http://0.0.0.0:5000/api",
       description: "Deploy Server",
     },
   ],

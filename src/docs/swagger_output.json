@@ -11,7 +11,7 @@
       "description": "Local Server"
     },
     {
-      "url": "https://back-end-railvision.vercel.app/api",
+      "url": "http://0.0.0.0:5000/api",
       "description": "Deploy Server"
     }
   ],
@@ -27,11 +27,6 @@
             "description": ""
           }
         },
-        "security": [
-          {
-            "bearerAuth": {}
-          }
-        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -61,11 +56,6 @@
             "description": ""
           }
         },
-        "security": [
-          {
-            "bearerAuth": {}
-          }
-        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -98,11 +88,6 @@
             "description": ""
           }
         },
-        "security": [
-          {
-            "bearerAuth": {}
-          }
-        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -306,11 +291,6 @@
             }
           }
         },
-        "security": [
-          {
-            "bearerAuth": {}
-          }
-        ],
         "requestBody": {
           "required": true,
           "content": {

@@ -12,7 +12,7 @@ const doc = {
       description: "Local Server",
     },
     {
-      url: "http://0.0.0.0:5000/api",
+      url: "http://16.176.14.44:5000/api",
       description: "Deploy Server",
     },
   ],

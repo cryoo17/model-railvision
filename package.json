@@ -8,7 +8,7 @@
     "dev": "nodemon src/index.ts",
     "docs": "ts-node src/docs/swagger.ts",
     "build": "tsc",
-    "start": "ts-node src/index.ts"
+    "start": "NODE_ENV=production ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",

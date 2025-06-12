@@ -15,6 +15,8 @@ async function init() {
     const app = express();
 
     const PORT = 3000;
+    const HOST =
+      process.env.NODE_ENV !== "production" ? "localhost" : "0.0.0.0";
 
     app.use(cors());
     app.use(bodyParser.json());
@@ -30,7 +32,7 @@ async function init() {
     docs(app);
 
     app.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
+      console.log(`Server is running on http://${HOST}:${PORT}`);
     });
   } catch (error) {
     console.log(error);

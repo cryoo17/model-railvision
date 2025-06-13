@@ -6,7 +6,7 @@ let model: tf.GraphModel | null = null;
 
 // Tentukan label kelas sesuai urutan output model Anda
 // GANTI INI DENGAN LABEL ANDA YANG SEBENARNYA
-const CLASS_LABELS = ["SANGAT_PADAT", "CUKUP_PADAT", "TIDAK_PADAT"];
+const CLASS_LABELS = ["TIDAK_PADAT", "CUKUP_PADAT", "SANGAT_PADAT"];
 
 /**
  * Memuat model TensorFlow.js dari file sistem.
@@ -72,10 +72,10 @@ async function predict(imageBuffer: Buffer) {
       return {
         label,
         confidence,
-        allScores: scoresArray.map((score, index) => ({
-          label: CLASS_LABELS[index],
-          score,
-        })),
+        // allScores: scoresArray.map((score, index) => ({
+        //   label: CLASS_LABELS[index],
+        //   score,
+        // })),
       };
     });
 

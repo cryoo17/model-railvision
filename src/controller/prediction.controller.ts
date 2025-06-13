@@ -4,13 +4,24 @@ import inferenceService from "../utils/inference";
 
 export default {
   async predict(req: Request, res: Response) {
-    const { imageUrl } = req.body as { imageUrl?: string };
+    const { imageUrl, name } = req.body as {
+      imageUrl?: string;
+      name?: string; 
+    };
 
     if (!imageUrl || typeof imageUrl !== "string") {
       return response.error(
         res,
         { code: 400 },
         "The 'imageUrl' field is required in the request body."
+      );
+    }
+
+    if (!name || typeof name !== "string") {
+      return response.error(
+        res,
+        { code: 400 },
+        "The 'name' field is required in the request body and must be a string."
       );
     }
 
@@ -29,7 +40,13 @@ export default {
 
       // 3. Jalankan prediksi menggunakan buffer gambar
       const result = await inferenceService.predict(imageBuffer);
-      response.success(res, result, "Prediction successful");
+
+      const finalResponse = {
+        name: name, // Ambil 'name' dari request body
+        ...result, // Gabungkan dengan semua properti dari hasil prediksi
+      };
+
+      response.success(res, finalResponse, "Prediction successful");
     } catch (error) {
       console.error(error); // Log error asli untuk debugging
       const errorMessage =

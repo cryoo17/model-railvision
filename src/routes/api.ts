@@ -84,13 +84,17 @@ router.post(
         schema: {
           type: "object",
           properties: {
+            name: {
+              type: "string",
+              example: "Stasiun Gubeng"
+            },
             imageUrl: {
               type: "string",
               format: "uri",
-              example: "https://res.cloudinary.com/your-cloud/image/upload/v123456/sample.jpg"
+              example: "https://res.cloudinary.com/dwoalvumb/image/upload/v1749743039/fkqp9l2acfvumcg0znqs.jpg"
             }
           },
-          required: ["imageUrl"]
+          required: ["name", "imageUrl"]
         }
       }
     }
